@@ -1,2 +1,2 @@
 console.log("ssh confirmed")
-console.log("making progress")
+console.log("making progress with github")
