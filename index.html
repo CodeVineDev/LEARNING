@@ -11,14 +11,57 @@
 
 <body>
   <div class="header">
-    <div class="dropdown">
-      <button class="link">Information</button>
-      <div class="dropdown_menu">
-        Dropdown Content
+    <div class="dropdown" data-dropdown>
+      <button class="link" data-dropdown-button>Information</button>
+      <div class="dropdown_menu information_grid">
+        <div>
+          <div class="drodown_heading">Free Tutorials</div>
+          <div class="dropdown_links">
+            <a href="#">All</a>
+            <a href="#">Latest</a>
+            <a href="#">Popular</a>
+          </div>
+        </div>
+        <div>
+          <div class="drodown_heading">Courses</div>
+          <div class="dropdown_links">
+            <a href="#">Javascrit</a>
+            <a href="#">CSS</a>
+            <a href="#">React js</a>
+          </div>
+        </div>
+        <div>
+          <div class="drodown_heading">Blog</div>
+          <div class="dropdown_links">
+            <a href="#">All</a>
+            <a href="#">Latest</a>
+            <a href="#">Popular</a>
+          </div>
+        </div>
+        <div>
+          <div class="drodown_heading">Other</div>
+          <div class="dropdown_links">
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Facebook</a>
+          </div>
+        </div>
       </div>
     </div>
     <a href="#" class="link"> Pricing</a>
-    <button class="link">Login</button>
+    <div class="dropdown" data-dropdown>
+      <button class="link" data-dropdown-button>Login</button>
+      <div class="dropdown_menu">
+        <form class="login_form">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email">
+          <label for="Password">Password</label>
+          <input type="password" name="password" id="password">
+          <button type="submit"> Login</button>
+        </form>
+      </div>
+    </div>
+
   </div>
 </body>
 

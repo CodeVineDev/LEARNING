@@ -45,13 +45,35 @@
     transition: 150ms ease-in-out;
 }
 
-.dropdown>.link:focus,
+.dropdown.active>.link,
 .link:hover {
     color: black;
 }
 
-.dropdown>.link:focus+.dropdown_menu {
+.dropdown.active>.link+.dropdown_menu {
     transform: translateY(0);
     opacity: 1;
     pointer-events: visible;
+}
+
+.information_grid {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 2rem;
+}
+
+.dropdown_links {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.dropdown_links a {
+    text-decoration: none;
+    color: grey;
+
+}
+
+.login_form>input {
+    margin-bottom: .25rem;
 }
