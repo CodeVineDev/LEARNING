@@ -73,7 +73,6 @@
     color: grey;
 
 }
-
-.login_form>input {
+.login_form > input{
     margin-bottom: .25rem;
 }
