@@ -1,0 +1,106 @@
+ @import 'resets', 'variables';
+
+ @function weights($weight-name) {
+     @return map-get($map: $font-weight, $key: $weight-name )
+ }
+
+ ;
+
+ @mixin gridDisplay {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 1.5rem;
+ }
+
+ @mixin widthAndMargin {
+     width: 80%;
+     margin: auto;
+     margin-top: 100px;
+ }
+
+ @mixin theme($light-theme: true){
+    @if $light-theme{
+        background:  lighten($primary-color, 100%);
+        color: darken($text-color, 100%)
+    }
+ }
+
+ @function text-sizes($size-value) {
+     @return map-get($map: $font-size, $key: $size-value )
+ };
+
+ body {
+     background: $accent-color;
+     color: $text-color;
+
+ }
+
+ .main {
+     @include widthAndMargin;
+
+     #{&}__paragraph {
+         font-weight: weights(medium);
+         transition: 200ms;
+
+         &:hover {
+             color: pink;
+         }
+     }
+ }
+
+ .about {
+     background: $primary-color;
+     @include widthAndMargin;
+     padding: 15px 10px;
+     border-radius: 10px;
+
+     p {
+         font-weight: weights(medium);
+         font-size: text-sizes(small);
+     }
+
+     #{&}__button {
+         background: none;
+         font-weight: weights(bold);
+         color: $text-color;
+         border: none;
+         border-radius: 5px;
+         padding: 10px 15px;
+         box-shadow: 2px 2px 5px black;
+         transition: 200ms;
+
+         &:hover {
+             background: $accent-color;
+         }
+     }
+
+ }
+
+ .about>h1 {
+     font-weight: weights(bold);
+     font-size: text-sizes(large);
+ }
+
+ .card-container {
+     @include widthAndMargin;
+     @include gridDisplay;
+
+
+
+     .__card1,
+     .__card2 {
+         padding: 10px;
+         background: $primary-color;
+         border-radius: 10px;
+         box-shadow: 2px 2px 5px black;
+         transition: 200ms;
+
+         &:hover {
+             box-shadow: 4px 4px 8px black;
+         }
+     }
+ }
+
+ .light{
+    @include theme($light-theme: true);
+ }
