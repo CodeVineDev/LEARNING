@@ -9,6 +9,40 @@ body {
   color: #fff;
 }
 
+.bigcard {
+  width: 80%;
+  margin: auto;
+  margin-top: 100px;
+  transition: 200ms;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px black;
+  background: #363636;
+  color: #fff;
+}
+.bigcard:hover {
+  color: black;
+  background: white;
+}
+.bigcard h2 {
+  font-size: 25px;
+}
+.bigcard button {
+  background: #363636;
+  transition: 200ms;
+  color: #fff;
+  padding: 10px;
+  border: none;
+}
+.bigcard button:hover {
+  background: #272727;
+}
+@media (max-width: 800px) {
+  .bigcard {
+    border: 2px solid red;
+  }
+}
+
 .main {
   width: 80%;
   margin: auto;
@@ -50,7 +84,7 @@ body {
 
 .about > h1 {
   font-weight: 800;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .card-container {
@@ -72,6 +106,11 @@ body {
 .card-container .__card1:hover,
 .card-container .__card2:hover {
   box-shadow: 4px 4px 8px black;
+}
+@media (max-width: 800px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 .light {

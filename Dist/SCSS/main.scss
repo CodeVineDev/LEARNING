@@ -1,11 +1,5 @@
  @import 'resets', 'variables';
 
- @function weights($weight-name) {
-     @return map-get($map: $font-weight, $key: $weight-name )
- }
-
- ;
-
  @mixin gridDisplay {
      display: grid;
      grid-template-columns: repeat(2, 1fr);
@@ -18,21 +12,77 @@
      margin-top: 100px;
  }
 
- @mixin theme($light-theme: true){
-    @if $light-theme{
-        background:  lighten($primary-color, 100%);
-        color: darken($text-color, 100%)
-    }
+ @mixin theme($light-theme: true) {
+     @if $light-theme {
+         background: lighten($primary-color, 100%);
+         color: darken($text-color, 100%)
+     }
  }
+
+ @mixin mobile {
+     @media (max-width: $mobile) {
+         @content;
+     }
+ }
+
+ @function weights($weight-name) {
+     @return map-get($map: $font-weight, $key: $weight-name )
+ }
+
+ ;
 
  @function text-sizes($size-value) {
      @return map-get($map: $font-size, $key: $size-value )
- };
+ }
+
+ ;
 
  body {
      background: $accent-color;
      color: $text-color;
 
+ }
+
+ .bigcard {
+     @include widthAndMargin;
+     transition: 200ms;
+     padding: 20px;
+     border-radius: 10px;
+     box-shadow: 3px 3px 5px black;
+     background: $primary-color;
+     color: $text-color;
+
+
+
+     &:hover {
+         color: darken($text-color, 100%);
+         background: lighten($accent-color, 100%);
+
+     }
+
+     h2 {
+         font-size: text-sizes(large);
+     }
+
+     p {
+         font-size: text-sizes(medium)
+     }
+
+     button {
+         background: $primary-color;
+         transition: 200ms;
+         color: $text-color;
+         padding: 10px;
+         border: none;
+
+         &:hover {
+             background: $accent-color
+         }
+     }
+  
+     @include mobile{
+        border: $border-red;
+     }
  }
 
  .main {
@@ -99,8 +149,12 @@
              box-shadow: 4px 4px 8px black;
          }
      }
+
+     @include mobile {
+         grid-template-columns: 1fr;
+     }
  }
 
- .light{
-    @include theme($light-theme: true);
+ .light {
+     @include theme($light-theme: true);
  }
