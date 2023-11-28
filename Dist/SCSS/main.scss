@@ -1,160 +1,281 @@
- @import 'resets', 'variables';
+@import 'resets', 'variables';
 
- @mixin gridDisplay {
-     display: grid;
-     grid-template-columns: repeat(2, 1fr);
-     gap: 1.5rem;
- }
-
- @mixin widthAndMargin {
-     width: 80%;
-     margin: auto;
-     margin-top: 100px;
- }
-
- @mixin theme($light-theme: true) {
-     @if $light-theme {
-         background: lighten($primary-color, 100%);
-         color: darken($text-color, 100%)
-     }
- }
-
- @mixin mobile {
-     @media (max-width: $mobile) {
-         @content;
-     }
- }
-
- @function weights($weight-name) {
-     @return map-get($map: $font-weight, $key: $weight-name )
- }
-
- ;
-
- @function text-sizes($size-value) {
-     @return map-get($map: $font-size, $key: $size-value )
- }
-
- ;
-
- body {
-     background: $accent-color;
-     color: $text-color;
-
- }
-
- .bigcard {
-     @include widthAndMargin;
-     transition: 200ms;
-     padding: 20px;
-     border-radius: 10px;
-     box-shadow: 3px 3px 5px black;
-     background: $primary-color;
-     color: $text-color;
+@mixin flexDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
+body {
+    @include flexDisplay;
+    height: 100vh;
+    background: $bright-blue;
+}
 
-     &:hover {
-         color: darken($text-color, 100%);
-         background: lighten($accent-color, 100%);
+.slider {
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
 
-     }
+.slides {
+    width: 500%;
+    height: 500px;
+    display: flex;
 
-     h2 {
-         font-size: text-sizes(large);
-     }
+    input {
+        display: none;
+    }
+}
 
-     p {
-         font-size: text-sizes(medium)
-     }
+.slide {
+    width: 20%;
+    transition: 2000ms;
 
-     button {
-         background: $primary-color;
-         transition: 200ms;
-         color: $text-color;
-         padding: 10px;
-         border: none;
+    img {
+        width: 100%;
+        height: 100%;
 
-         &:hover {
-             background: $accent-color
-         }
-     }
-  
-     @include mobile{
-        border: $border-red;
-     }
- }
+    }
+}
 
- .main {
-     @include widthAndMargin;
+.navigation-manual {
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
 
-     #{&}__paragraph {
-         font-weight: weights(medium);
-         transition: 200ms;
+.manual-btn {
+    border: $border-blue;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1000ms;
 
-         &:hover {
-             color: pink;
-         }
-     }
- }
+    &:not(:last-child) {
+        margin-right: 40px;
+    }
 
- .about {
-     background: $primary-color;
-     @include widthAndMargin;
-     padding: 15px 10px;
-     border-radius: 10px;
+    &:hover {
+        background: $bright-blue;
 
-     p {
-         font-weight: weights(medium);
-         font-size: text-sizes(small);
-     }
+    }
+}
 
-     #{&}__button {
-         background: none;
-         font-weight: weights(bold);
-         color: $text-color;
-         border: none;
-         border-radius: 5px;
-         padding: 10px 15px;
-         box-shadow: 2px 2px 5px black;
-         transition: 200ms;
+#radio1:checked~.first {
+    margin-left: 0;
+}
 
-         &:hover {
-             background: $accent-color;
-         }
-     }
+#radio2:checked~.first {
+    margin-left: -20%;
+}
 
- }
+#radio3:checked~.first {
+    margin-left: -40%;
+}
 
- .about>h1 {
-     font-weight: weights(bold);
-     font-size: text-sizes(large);
- }
+#radio4:checked~.first {
+    margin-left: -60%;
+}
 
- .card-container {
-     @include widthAndMargin;
-     @include gridDisplay;
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 800px;
+    margin-top: 460px;
+
+    div {
+        border: $border-blue;
+        padding: 5px;
+        border-radius: 10px;
+        transition: 1000ms;
+    }
+
+    div:not(:last-child) {
+        margin-right: 40px;
+    }
+}
+
+#radio1:checked~.navigation-auto .auto-btn1 {
+    background: $bright-blue;
+}
+
+#radio2:checked~.navigation-auto .auto-btn2 {
+    background: $bright-blue;
+}
+
+#radio3:checked~.navigation-auto .auto-btn3 {
+    background: $bright-blue;
+}
+
+#radio4:checked~.navigation-auto .auto-btn4 {
+    background: $bright-blue;
+}
 
 
 
-     .__card1,
-     .__card2 {
-         padding: 10px;
-         background: $primary-color;
-         border-radius: 10px;
-         box-shadow: 2px 2px 5px black;
-         transition: 200ms;
+//  @import 'resets', 'variables';
 
-         &:hover {
-             box-shadow: 4px 4px 8px black;
-         }
-     }
+//  @mixin gridDisplay {
+//      display: grid;
+//      grid-template-columns: repeat(2, 1fr);
+//      gap: 1.5rem;
+//  }
 
-     @include mobile {
-         grid-template-columns: 1fr;
-     }
- }
+//  @mixin widthAndMargin {
+//      width: 80%;
+//      margin: auto;
+//      margin-top: 100px;
+//  }
 
- .light {
-     @include theme($light-theme: true);
- }
+//  @mixin theme($light-theme: true) {
+//      @if $light-theme {
+//          background: lighten($primary-color, 100%);
+//          color: darken($text-color, 100%)
+//      }
+//  }
+
+//  @mixin mobile {
+//      @media (max-width: $mobile) {
+//          @content;
+//      }
+//  }
+
+//  @function weights($weight-name) {
+//      @return map-get($map: $font-weight, $key: $weight-name )
+//  }
+
+//  ;
+
+//  @function text-sizes($size-value) {
+//      @return map-get($map: $font-size, $key: $size-value )
+//  }
+
+//  ;
+
+//  body {
+//      background: $accent-color;
+//      color: $text-color;
+
+//  }
+
+//  .bigcard {
+//      @include widthAndMargin;
+//      transition: 200ms;
+//      padding: 20px;
+//      border-radius: 10px;
+//      box-shadow: 3px 3px 5px black;
+//      background: $primary-color;
+//      color: $text-color;
+
+
+
+//      &:hover {
+//          color: darken($text-color, 100%);
+//          background: lighten($accent-color, 100%);
+
+//      }
+
+//      h2 {
+//          font-size: text-sizes(large);
+//      }
+
+//      p {
+//          font-size: text-sizes(medium)
+//      }
+
+//      button {
+//          background: $primary-color;
+//          transition: 200ms;
+//          color: $text-color;
+//          padding: 10px;
+//          border: none;
+
+//          &:hover {
+//              background: $accent-color
+//          }
+//      }
+
+//      @include mobile{
+//         border: $border-red;
+//      }
+//  }
+
+//  .main {
+//      @include widthAndMargin;
+
+//      #{&}__paragraph {
+//          font-weight: weights(medium);
+//          transition: 200ms;
+
+//          &:hover {
+//              color: pink;
+//          }
+//      }
+//  }
+
+//  .about {
+//      background: $primary-color;
+//      @include widthAndMargin;
+//      padding: 15px 10px;
+//      border-radius: 10px;
+
+//      p {
+//          font-weight: weights(medium);
+//          font-size: text-sizes(small);
+//      }
+
+//      #{&}__button {
+//          background: none;
+//          font-weight: weights(bold);
+//          color: $text-color;
+//          border: none;
+//          border-radius: 5px;
+//          padding: 10px 15px;
+//          box-shadow: 2px 2px 5px black;
+//          transition: 200ms;
+
+//          &:hover {
+//              background: $accent-color;
+//          }
+//      }
+
+//  }
+
+//  .about>h1 {
+//      font-weight: weights(bold);
+//      font-size: text-sizes(large);
+//  }
+
+//  .card-container {
+//      @include widthAndMargin;
+//      @include gridDisplay;
+
+
+
+//      .__card1,
+//      .__card2 {
+//          padding: 10px;
+//          background: $primary-color;
+//          border-radius: 10px;
+//          box-shadow: 2px 2px 5px black;
+//          transition: 200ms;
+
+//          &:hover {
+//              box-shadow: 4px 4px 8px black;
+//          }
+//      }
+
+//      @include mobile {
+//          grid-template-columns: 1fr;
+//      }
+//  }
+
+//  .light {
+//      @include theme($light-theme: true);
+//  }
