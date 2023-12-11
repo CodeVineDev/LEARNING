@@ -4,186 +4,42 @@
   padding: 0;
 }
 
-html {
-  font-size: 62.5%;
-  overflow-x: hidden;
-}
-@media (max-width: 800px) {
-  html {
-    font-size: 55%;
-  }
-}
-@media (max-width: 450px) {
-  html {
-    font-size: 50%;
-  }
+body {
+  background: #262626;
 }
 
-body * {
-  outline: none;
-  border: none;
-  text-decoration: none;
-  transition: 0.2s linear;
-  text-transform: capitalize;
-  background: #fff;
-}
-
-img {
-  width: 100%;
-  height: 100%;
-}
-
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 3rem 2rem;
-}
-.container .title {
-  font-size: 3.5rem;
-  color: #444;
-  margin-bottom: 3rem;
-  text-transform: uppercase;
-  text-align: center;
-}
-.container .product-container {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-}
-@media (max-width: 800px) {
-  .container .product-container {
-    width: min(90%, 900px);
-    margin: auto;
-  }
-}
-@media (max-width: 660px) {
-  .container .product-container {
-    width: min(85%, 900px);
-    margin: auto;
-  }
-}
-.container .product-container .product {
-  text-align: center;
-  padding: 3rem 2rem;
-  background: #fff;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  outline: 0.1rem solid #ccc;
-  outline-offset: -1.5rem;
-  cursor: pointer;
-}
-.container .product-container .product:hover {
-  outline: 0.2rem solid #ccc;
-  outline-offset: 0;
-}
-.container .product-container .product:hover h3 {
-  color: #27ae60;
-}
-.container .product-container .product img {
-  height: 25rem;
-}
-.container .product-container .product img:hover {
-  transform: scale(0.9);
-}
-.container .product-container .product h3 {
-  padding: 0.5rem 0;
-  font-size: 2rem;
-  color: #444;
-}
-.container .product-container .product .price {
-  font-size: 2rem;
-  color: #444;
-}
-
-.products-preview {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-height: 100vh;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
-.products-preview .preview {
-  display: none;
-  padding: 2rem;
-  text-align: center;
-  background: #fff;
-  position: relative;
-  margin: 2rem;
-  width: 40rem;
-}
-.products-preview .preview img {
-  height: 30rem;
-}
-@media (max-width: 800px) {
-  .products-preview .preview img {
-    height: 25rem;
-  }
-}
-.products-preview .preview .fa-times {
+.center {
   position: absolute;
-  top: 0;
-  right: 0.1rem;
-  cursor: pointer;
-  color: #444;
-  font-size: 2.5rem;
-  background: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.products-preview .preview .fa-times:hover {
-  transform: rotate(90deg);
-}
-.products-preview .preview h3 {
-  color: #444;
-  padding: 0.5rem 0;
-  font-size: 2.5rem;
-}
-.products-preview .preview .stars {
-  padding: 1rem 0;
-}
-.products-preview .preview .stars i {
-  font-size: 1.5rem;
-  color: #27ae60;
-}
-.products-preview .preview .stars span {
-  color: #999;
-}
-.products-preview p {
-  line-height: 1.5;
-  padding: 1rem 0;
-  font-size: 1.6rem;
-  color: #777;
-}
-.products-preview .price {
-  padding: 1rem 0;
-  font-size: 2.5rem;
-  color: #27ae60;
-}
-.products-preview .buttons {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-  gap: 1.5rem;
-}
-.products-preview .buttons a {
-  flex: 1 1 16rem;
-  padding: 1rem;
-  font-size: 1.8rem;
-  border: 0.1rem solid #444;
-  color: #444;
-}
-.products-preview .buttons a.buy:hover {
-  background: #444;
+
+.pulse {
+  width: 100px;
+  height: 100px;
+  background: #ff6d4a;
+  border-radius: 50%;
   color: #fff;
+  font-size: 20px;
+  text-align: center;
+  line-height: 100px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: uppercase;
+  animation: animate 2s linear infinite;
 }
-.products-preview .buttons a.cart {
-  background: #444;
-  color: #fff;
-}
-.products-preview .buttons a.cart:hover {
-  background: #111;
-}
-.products-preview .preview.active {
-  display: inline-block;
+
+@keyframes animate {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 109, 74, 0.7), 0 0 0 0 rgba(255, 109, 74, 0.7);
+  }
+  40% {
+    box-shadow: 0 0 0 50px rgba(255, 109, 74, 0), 0 0 0 0 rgba(255, 109, 74, 0.7);
+  }
+  80% {
+    box-shadow: 0 0 0 50px rgba(255, 109, 74, 0), 0 0 0 0 rgba(255, 109, 74, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 109, 74, 0), 0 0 0 0 rgba(255, 109, 74, 0);
+  }
 }/*# sourceMappingURL=main.css.map */
