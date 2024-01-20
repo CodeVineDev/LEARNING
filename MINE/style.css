@@ -45,7 +45,6 @@
     box-shadow: 2px 2px 5px grey;
     padding: .25rem;
     background: rgb(245, 254, 255);
-    pointer-events: none;
 }
 
 .dropdown.active>.link,
