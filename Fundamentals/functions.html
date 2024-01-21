@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions Javascript</title>
+    <style>
+      .size {
+        transform: scale(2) translate(300px);
+        transition: 400ms ease-out;
+      }
+    </style>
+  </head>
+
+  <button class="btn">Click Me</button>
+
+  <body>
+    <script>
+        let btn = document.querySelector(".btn");
+        btn.addEventListener("click", () =>{
+            btn.classList.toggle('size')
+        });
+        //         function print(value) {
+        // console.log(value);
+        //         }
+
+        //        function useCallBack(callBack){
+        //         callBack('Hello')
+        //        }
+        //        useCallBack(print)
+    </script>
+  </body>
+</html>
