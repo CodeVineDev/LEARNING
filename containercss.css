@@ -28,7 +28,7 @@ body {
 }
 
 .box h1 {
-    font-size: 5cqi;
+    font-size: clamp(1.2rem, 2cqi + 0.5rem, 10rem);
     color: rgb(26, 26, 26);
     margin-bottom: 20px;
 }
