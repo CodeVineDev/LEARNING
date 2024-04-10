@@ -34,23 +34,22 @@ body {
 }
 
 .box p {
-    font-size: clamp(1rem, 2cqi + .2rem, 3rem);
+    font-size: clamp(1rem, 1.5cqi + .2rem, 3rem);
     color: rgb(26, 26, 26);
     margin-bottom: 20px;
 }
 
 .box button {
-    font-size: 3cqi;
+    font-size: clamp(1rem, 1.5cqi + .3rem, 3rem);
     color: rgb(26, 26, 26);
     margin-bottom: 20px;
-    border-radius: 10px;
-    padding: 10px 20px;
+    border-radius: 20px;
+    padding: 10px;
     background: lime;
     color: white;
-    font-weight: 600;
     border: none;
 }
-
+/* 
 .new-box {
     border: 1px solid grey;
     padding: 1rem;
@@ -61,16 +60,17 @@ body {
     border-radius: 10px;
     container-type: inline-size;
     container-name: new-conbox;
-}
+} */
 
 
-@container (inline-size <=700px) {
+@container (inline-size <=800px) {
     .main-container {
         grid-template-columns: 1fr;
+        width: max(80%, 300px);
     }
 }
-@container new-conbox (width <= 800px) {
+/* @container new-conbox (width <= 800px) {
     .new-box p{
         border: 3px solid rgb(255, 0, 0);
     }
-}
+} */
