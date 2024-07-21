@@ -19,6 +19,7 @@ body {
     container-type: inline-size;
     width: max(90%, 300px);
     margin: auto;
+    margin-top: 30px;
 }
 
 .box {
@@ -68,6 +69,9 @@ body {
         grid-template-columns: 1fr;
         width: max(80%, 300px);
     }
+    /* .main-container .box {
+        border: 2px solid red;
+    } */
 }
 /* @container new-conbox (width <= 800px) {
     .new-box p{
