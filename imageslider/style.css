@@ -25,9 +25,9 @@ body {
 .slide {
     /* min-width: 100%; */
     /* For 1 cards per view */
-    min-width: 50%;
+    /* min-width: 50%; */
     /* For 2 cards per view */
-    /* min-width: 33.33%; */
+    min-width: 33.33%;
     /* For 3 cards per view */
     box-sizing: border-box;
     padding: 40px;

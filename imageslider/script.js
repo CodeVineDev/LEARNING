@@ -15,7 +15,7 @@ const slides = document.querySelectorAll('.slide');
 const pagination = document.querySelector('.pagination');
 let currentIndex = 0;
 let autoScrollInterval;
-const visibleSlides = 2; // Number of slides visible at a time
+const visibleSlides = 3; // Number of slides visible at a time
 const totalSlides = slides.length;
 
 function updateSlider() {
