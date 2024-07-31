@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.accordion {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+.accordion-item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.accordion-header {
+    background-color: #f1f1f1;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.accordion-header:hover {
+    background-color: #e1e1e1;
+}
+.accordion-header::after {
+    content: '\002B'; /* Unicode character for "plus" sign (+) */
+    font-size: 20px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s;
+}
+.accordion-header.active::after {
+    transform: rotate(45deg); /* Rotate to create an "x" sign */
+}
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.accordion-content p {
+    padding: 10px;
+    margin: 0;
+}
