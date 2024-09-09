@@ -64,6 +64,7 @@ body {
 }
 
 .pagination div {
+    border: 2px solid red;
     width: 10px;
     height: 10px;
     background-color: #ddd;
