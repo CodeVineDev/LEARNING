@@ -1,9 +1,6 @@
-<script>
+<script setup>
 import { ref } from 'vue';
 
-
-export default {
-  setup() {
     const name = ref ('Chukwudolue Divine');
     const status =ref('pending');
     const tasks = ref(['Football', 'Basketball', 'Golf']);
@@ -18,19 +15,8 @@ export default {
       }
     };
 
-    return {
-      name,
-      status,
-      tasks,
-      toggleStatus,
-
-    }
-  }
-
   // IN VUE THERE IS OPTIONS API AND COMPOSITIONS API
   // COMPOSITIONS API
-};
-
 </script>
 <template>
   <h1>
