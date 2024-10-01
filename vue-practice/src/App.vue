@@ -1,11 +1,32 @@
 <script>
+import { ref } from 'vue';
+
+
 export default {
   setup() {
-    const name = 'Chukwudolue Divine';
-    const status = 'active';
-    const tasks = ['Football', 'Basketball', 'Golf'];
+    const name = ref ('Chukwudolue Divine');
+    const status =ref('pending');
+    const tasks = ref(['Football', 'Basketball', 'Golf']);
 
+    const toggleStatus = () => {
+      if (status.value === 'active') {
+        status.value = 'pending'
+      } else if (status.value === 'pending') {
+        status.value = 'inactive'
+      } else {
+        status.value = 'active'
+      }
+    };
+
+    return {
+      name,
+      status,
+      tasks,
+      toggleStatus,
+
+    }
   }
+
   // IN VUE THERE IS OPTIONS API AND COMPOSITIONS API
   // COMPOSITIONS API
 };
@@ -21,6 +42,7 @@ export default {
 
 
   <div>
+    <h3>Games:</h3>
     <ul>
       <li v-for="games in tasks" :key="games"> {{ games }}</li>
     </ul>
