@@ -1,48 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-</head>
-<body>
-
-    <div id="nav"></div>
-
-    <div id="content">
-        <!-- Your page-specific content goes here -->
-        <h1>Welcome to My Website!</h1>
-    </div>
-
-    <div id="footer"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get & Display JSON Data</title>
+  </head>
+  <body>
+    <h1>Users:</h1>
+    <ul> </ul>
 
     <script>
-// Function to load external HTML files and inject them into the page
-function loadComponent(componentId, filePath) {
-    fetch(filePath)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Failed to load ${filePath}: ${response.statusText}`);
-            }
-            return response.text();
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then((res) => {
+          return res.json();
         })
-        .then(data => {
-            document.getElementById(componentId).innerHTML = data;
+        .then((data) => {
+          data.forEach((user) => {
+            const innerCode = `
+         <li>${user.id} ${user.name} ${user.email} ${user.phone}</li>
+        `;
+
+            document
+              .querySelector("ul")
+              .insertAdjacentHTML("beforeend", innerCode);
+          });
         })
-        .catch(error => {
-            console.error(error);
-            document.getElementById(componentId).innerHTML = `<p>Failed to load content.</p>`;
-        });
-}
-
-// Load navbar
-loadComponent('nav', 'nav.html');
-
-
-// Load footer
-loadComponent('footer', 'footer.html');
-
+        .catch((error) => console.log(error));
     </script>
-
-</body>
+  </body>
 </html>

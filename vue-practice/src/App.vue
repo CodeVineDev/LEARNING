@@ -35,9 +35,10 @@ const deleteTask = (index) => {
 
 </script>
 <template>
-  <div class=" center-box">
+  <div class="center-box">
     <h1 v-if="status === 'congratulations'">Congratulations</h1>
     <h1 v-else>Sorry</h1>
+    <h2 class="text">DAMNN</h2>
     <p v-if="compliment === ' You have gained Access'"> You have gained Access</p>
     <p v-else>You are not qualified</p>
     <button @click="toggleStatus"> Continue</button>
